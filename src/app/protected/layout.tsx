@@ -21,23 +21,17 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
   // Show welcome if not logged in
   if (status === "loading") return <div>Loading...</div>;
 
-//   if (!session) {
-//     return (
-//       <>
-//         <Navbar />
-//         <main className="p-8 max-w-4xl mx-auto text-center">
-//           <h1 className="text-4xl font-extrabold mb-4">Welcome to ArkLab</h1>
-//           <p className="text-lg mb-6">Please log in or register to access full features.</p>
-//         </main>
-//       </>
-//     );
-//   }
-
-  if (!session && !["/", "/about", "/contact", "/login", "/register"].includes(pathname)) {
-    // Show nothing or redirecting screen while router.push works
-    return null;
+  if (!session) {
+    return (
+      <>
+        <Navbar />
+        <main className="p-8 max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl font-extrabold mb-4">Welcome to ArkLab</h1>
+          <p className="text-lg mb-6">Please log in or register to access full features.</p>
+        </main>
+      </>
+    );
   }
-
 
   // If logged in show children and full navbar
   return (
