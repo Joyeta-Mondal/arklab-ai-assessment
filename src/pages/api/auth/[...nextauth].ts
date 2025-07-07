@@ -9,7 +9,7 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session}) {
       
       return session;
     },

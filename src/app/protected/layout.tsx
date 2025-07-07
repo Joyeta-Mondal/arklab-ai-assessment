@@ -13,7 +13,7 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
   // If not logged in and trying to access restricted pages, redirect or show limited UI
   useEffect(() => {
     const publicPaths = ["/", "/about", "/contact", "/login", "/register"];
-    if (status === "unauthenticated" && !publicPaths.includes(pathname)) {
+    if (status === "unauthenticated" && !publicPaths.includes(pathname ?? "")) {
       router.push("/login");
     }
   }, [pathname, status, router]);

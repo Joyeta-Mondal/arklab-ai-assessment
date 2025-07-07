@@ -1,8 +1,10 @@
-export type Agent = {
+export type AgentStatus = "Active" | "Beta" | "Archived";
+
+export interface Agent {
   id: string;
   name: string;
   description: string;
-  status: "Active" | "Beta" | "Archived";
+  status: AgentStatus;
   category: string;
-  pricingModel: "Free Tier" | "Subscription" | "Per-Use";
-};
+  pricingModel: string;
+}
