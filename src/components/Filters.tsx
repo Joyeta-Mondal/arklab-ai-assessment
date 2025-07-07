@@ -13,6 +13,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+
 
 const statusOptions = ["Active", "Beta", "Archived"];
 const categoryOptions = [
@@ -27,7 +29,7 @@ const categoryOptions = [
 ];
 const pricingOptions = ["Free Tier", "Subscription", "Per-Use"];
 
-const boxVariants = {
+const boxVariants : Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
